@@ -16,7 +16,8 @@ log(){
 }
 
 if [ $USERID -ne 0 ]; then
-    log "$R Please run this script with root user access $N"
+    echo -e "$R Please run this script with root user access $N"
+    exit 1
 fi
 
 mkdir -p $LOGS_FOLDER
@@ -32,12 +33,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    log -e "$R Source Directory: $SOURCE_DIR does not exist $N"
+    log "$R Source Directory: $SOURCE_DIR does not exist $N"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]; then
-    log -e "$R Destination Directory:  $DEST_DIR does not exist $N"
+    log "$R Destination Directory:  $DEST_DIR does not exist $N"
     exit 1
 fi
 
