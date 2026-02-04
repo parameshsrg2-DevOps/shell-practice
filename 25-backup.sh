@@ -16,7 +16,7 @@ log(){
 }
 
 if [ $USERID -ne 0 ]; then
-    log -e "$R Please run this script with root user access $N"
+    log "$R Please run this script with root user access $N"
 fi
 
 mkdir -p $LOGS_FOLDER
